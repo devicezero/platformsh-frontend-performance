@@ -1,0 +1,5 @@
+themongo:
+    type: mongodb:3.6
+    disk: 1024
+headlessbrowser:
+    type: chrome-headless:73

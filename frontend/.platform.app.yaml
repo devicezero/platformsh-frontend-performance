@@ -1,0 +1,30 @@
+name: frontend
+type: nodejs:12
+
+hooks:
+  build: |
+      npm run build
+  post_deploy: |
+    # echo "trigger external services"
+    # if [ "$PLATFORM_BRANCH" = master ]; then
+    #   echo "creating calibre deployment and snapshot"
+    #   curl -X POST -H "Accept: application/json" "https://calibreapp.com/api/sites/todo/deploys?secret=$CALIBRE_SITE_SECRET&revision=$PLATFORM_TREE_ID" | json_pp
+    #   curl -X POST -H "Accept: application/json" "https://calibreapp.com/api/sites/todo/snapshots?secret=$CALIBRE_SITE_SECRET" | json_pp
+    # fi
+
+    echo "trigger lighthouse"
+    node lighthouse.js
+
+    echo "trigger webpagetest"
+    node webpagetest.js
+
+relationships:
+  chromeheadlessbrowser: "headlessbrowser:http"
+
+disk: 128
+
+web:
+  locations:
+    '/':
+      root: 'dist'
+      passthru: '/index.html'

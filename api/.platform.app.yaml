@@ -1,0 +1,11 @@
+name: api
+type: nodejs:12
+
+web:
+  commands:
+    start: "node index.js"
+
+relationships:
+    database: "themongo:mongodb"
+
+disk: 128

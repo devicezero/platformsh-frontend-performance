@@ -1,0 +1,22 @@
+{
+  "name": "db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start-dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^18.4.0",
+    "mongoose": "^5.7.14",
+    "nodemon": "^2.0.1",
+    "platformsh-config": "^2.3.1"
+  }
+}
