@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@hapi/hapi": "^18.4.0",
+    "@hapi/hapi": "^19.1.1",
     "mongoose": "^5.7.14",
     "nodemon": "^2.0.1",
     "platformsh-config": "^2.3.1"
